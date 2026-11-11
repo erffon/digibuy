@@ -1,0 +1,66 @@
+@use "sass:map";
+@use "variables";
+
+// Responsive helpers use the breakpoint names and values in _variables.scss.
+// Include content inside the mixin to emit styles within its media query.
+
+// Apply styles at the named breakpoint and every wider viewport (mobile-first).
+// Example: @include breakpoint(md) { display: grid; }
+// Meaning: show this element as a grid on medium screens and larger.
+@mixin breakpoint($name) {
+  @if not map.has-key(variables.$breakpoints, $name) { @error "Unknown breakpoint: #{$name}."; }
+  @media (min-width: map.get(variables.$breakpoints, $name)) { @content; }
+}
+
+// Alias for breakpoint(); use this name for Tailwind-style responsive rules.
+// Example: @include screen(lg) { grid-template-columns: repeat(3, 1fr); }
+// Meaning: use three columns on large screens and larger.
+@mixin screen($name) { @include breakpoint($name) { @content; } }
+
+// Apply styles only between this breakpoint and the next one in the map.
+// The final breakpoint has no upper limit.
+// Example: @include screen-only(md) { display: none; } // md up to (but not including) lg
+// Meaning: hide the element on medium screens, but not below md or at lg and above.
+@mixin screen-only($name) {
+  @if not map.has-key(variables.$breakpoints, $name) { @error "Unknown breakpoint: #{$name}."; }
+  $min: map.get(variables.$breakpoints, $name);
+  $next: null;
+  $passed: false;
+  @each $key, $value in variables.$breakpoints {
+    @if $passed and $next == null { $next: $value; }
+    @if $key == $name { $passed: true; }
+  }
+  @if $next == null { @media (min-width: $min) { @content; } }
+  @else { @media (min-width: $min) and (max-width: ($next - 0.02rem)) { @content; } }
+}
+
+// Apply styles below the named breakpoint.
+// Example: @include screen-down(md) { padding: 1rem; } // below md
+// Meaning: use 1rem padding on screens narrower than md.
+@mixin screen-down($name) {
+  @if not map.has-key(variables.$breakpoints, $name) { @error "Unknown breakpoint: #{$name}."; }
+  @media (max-width: (map.get(variables.$breakpoints, $name) - 0.02rem)) { @content; }
+}
+
+// Center content and constrain its width with the shared container settings.
+// Example: .page__content { @include container; }
+// Meaning: center the page content, limit its width, and add side padding.
+@mixin container {
+  width: 100%; max-width: variables.$container-width; margin-inline: auto;
+  padding-inline: variables.$container-gutter; box-sizing: border-box;
+}
+
+// Visually hide content while keeping it available to assistive technology.
+// Example: .skip-link__label { @include visually-hidden; }
+// Meaning: hide the label on screen while leaving it accessible to screen readers.
+@mixin visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+// Add a visible outline when an element receives keyboard focus.
+// Example: .button { @include focus-ring; }
+// Meaning: show an offset outline when the button is focused with a keyboard.
+@mixin focus-ring {
+  &:focus-visible { outline: 2px solid variables.$color-primary; outline-offset: 3px; }
+}

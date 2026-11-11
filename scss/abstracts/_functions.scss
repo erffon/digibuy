@@ -1,0 +1,27 @@
+@use "sass:math";
+@use "sass:meta";
+
+
+// Convert a pixel value to rem units using the supplied base size.
+// The base defaults to 16px; pass unitless numbers or values with px units.
+// Example: font-size: rem(24); // returns 1.5rem with the default base.
+// Meaning: express 24px as a scalable rem value based on a 16px root size.
+@function rem($value, $base: 16px) {
+  @if meta.type-of($value) != "number" or meta.type-of($base) != "number" {
+    @error "rem() expects numeric values.";
+  }
+
+  @if math.is-unitless($value) {
+    $value: $value * 1px;
+  }
+
+  @if math.is-unitless($base) {
+    $base: $base * 1px;
+  }
+
+  @if math.unit($value) != "px" or math.unit($base) != "px" or $base <= 0px {
+    @error "rem() expects pixel values and a positive base.";
+  }
+
+  @return math.div($value, $base) * 1rem;
+}

@@ -1,0 +1,29 @@
+// Override these defaults with @use "abstracts" with (...).
+$font-family-base: (system-ui, sans-serif) !default;
+$font-size-base: 1rem !default;
+$line-height-base: 1.5 !default;
+
+$color-primary: #2563eb !default;
+$color-text: #1f2937 !default;
+$color-muted: #6b7280 !default;
+$color-background: #fff !default;
+$color-border: #e5e7eb !default;
+
+$container-width: 80rem !default;
+$container-gutter: 1rem !default;
+$border-radius: 0.5rem !default;
+$transition-duration: 200ms !default;
+
+// Responsive breakpoints, following Tailwind CSS's default screen widths.
+// These are mobile-first min-width thresholds and can be overridden by
+// configuring this module with @use "abstracts/variables" with ($breakpoints: (...)).
+// Example:
+// @use "abstracts/variables" with ($breakpoints: (sm: 36rem, md: 48rem));
+// Meaning: start the `sm` screen at 36rem and the `md` screen at 48rem.
+$breakpoints: (
+  sm: 40rem,
+  md: 48rem,
+  lg: 64rem,
+  xl: 80rem,
+  xxl: 96rem,
+) !default;
