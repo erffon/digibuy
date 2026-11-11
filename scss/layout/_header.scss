@@ -1,0 +1,16 @@
+@use "../abstracts" as theme;
+
+.site-header {
+  padding-block: 1rem;
+  border-block-end: 1px solid theme.$color-border;
+  background-color: theme.$color-background;
+}
+
+.site-branding {
+  min-width: 0;
+}
+
+.custom-logo-link {
+  display: inline-block;
+  max-width: 100%;
+}

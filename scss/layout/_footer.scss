@@ -1,0 +1,13 @@
+@use "../abstracts" as theme;
+
+.site-footer {
+  padding-block: 2rem;
+  border-block-start: 1px solid theme.$color-border;
+  background-color: theme.$color-background;
+}
+
+.site-info {
+  margin-block-start: 1rem;
+  color: theme.$color-muted;
+  font-size: 0.875rem;
+}

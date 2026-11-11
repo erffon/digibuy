@@ -1,0 +1,16 @@
+@use "../abstracts" as theme;
+
+body {
+  color: theme.$color-text;
+  background-color: theme.$color-background;
+}
+
+a {
+  color: theme.$color-primary;
+  text-underline-offset: 0.15em;
+}
+
+::selection {
+  color: theme.$color-background;
+  background-color: theme.$color-primary;
+}

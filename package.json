@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "sass --watch --style=expanded assets/scss/entries:assets/dist",
-    "build": "sass --style=compressed --no-source-map assets/scss/entries:assets/dist"
+    "dev": "sass --watch --style=expanded scss/entries:assets/dist",
+    "build": "sass --style=compressed --no-source-map scss/entries:assets/dist"
   },
   "keywords": [],
   "author": "",

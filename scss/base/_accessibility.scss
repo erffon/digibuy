@@ -1,0 +1,22 @@
+@use "../abstracts" as theme;
+
+.screen-reader-text {
+  @include theme.visually-hidden;
+}
+
+// WordPress skip links must become visible when reached by keyboard.
+.screen-reader-text:focus {
+  position: fixed;
+  inset-block-start: 1rem;
+  inset-inline-start: 1rem;
+  z-index: 10000;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 1rem;
+  overflow: visible;
+  clip-path: none;
+  white-space: normal;
+  color: theme.$color-text;
+  background-color: theme.$color-background;
+}
