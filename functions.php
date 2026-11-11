@@ -20,6 +20,11 @@ function dgb_register_plugins(): void
             'slug'     => 'woocommerce',
             'required' => true,
         ],
+        [
+            'name'     => 'ووکامرسی فارسی',
+            'slug'     => 'persian-woocommerce',
+            'required' => true,
+        ],
     ];
 
 
