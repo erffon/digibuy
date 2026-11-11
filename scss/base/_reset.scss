@@ -1,0 +1,164 @@
+// Use predictable sizing for elements and generated content.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+// Leave typography and spacing decisions to the theme.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+pre,
+dl,
+dd {
+  margin: 0;
+}
+
+// Keep native list markers unless a list is explicitly presentational.
+ul,
+ol {
+  margin: 0;
+  padding-inline-start: 1.5em;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  padding: 0;
+  list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+iframe {
+  border: 0;
+}
+
+// Inherit theme typography without removing native control affordances.
+button,
+input,
+select,
+textarea,
+optgroup {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 0;
+}
+
+th {
+  text-align: start;
+}
+
+hr {
+  height: 0;
+  margin-block: 1em;
+  border: 0;
+  border-block-start: 1px solid currentColor;
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+// Preserve the hidden attribute even when component styles set display.
+[hidden]:not([hidden="until-found"]) {
+  display: none !important;
+}
+
+// Keep keyboard focus visible; components can customize this outline.
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
