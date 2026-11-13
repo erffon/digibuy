@@ -11,29 +11,29 @@ function dgb_register_plugins(): void
 {
     $plugins = [
         [
-            'name'     => 'Elementor',
-            'slug'     => 'elementor',
+            'name' => 'Elementor',
+            'slug' => 'elementor',
             'required' => true,
         ],
         [
-            'name'     => 'WooCommerce',
-            'slug'     => 'woocommerce',
+            'name' => 'WooCommerce',
+            'slug' => 'woocommerce',
             'required' => true,
         ],
         [
-            'name'     => 'ووکامرسی فارسی',
-            'slug'     => 'persian-woocommerce',
+            'name' => 'ووکامرسی فارسی',
+            'slug' => 'persian-woocommerce',
             'required' => true,
         ],
     ];
 
 
     $config = [
-        'id'           => 'digibuy',
-        'menu'         => 'digibuy-install-plugins',
-        'parent_slug'  => 'themes.php',
-        'has_notices'  => true,
-        'dismissable'  => false,
+        'id' => 'digibuy',
+        'menu' => 'digibuy-install-plugins',
+        'parent_slug' => 'themes.php',
+        'has_notices' => true,
+        'dismissable' => false,
         'is_automatic' => false,
 
         'strings' => [
@@ -78,4 +78,7 @@ function dgb_register_plugins(): void
     tgmpa($plugins, $config);
 
 }
+
+define('THEME_PATH', get_template_directory());
+define('THEME_URI', get_template_directory_uri());
 
