@@ -24,7 +24,7 @@
         <div class="header_buttons">
 
             <button class="header_buttons_cart">
-                <span>2</span>
+                <span><?php echo WC()->cart->get_cart_contents_count(); ?></span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                      class="lucide lucide-shopping-bag preview-icon">
@@ -35,8 +35,9 @@
 
 
             </button>
+
             <button class="header_buttons_profile">
-                <span>حساب کاربری</span>
+                <span><?= is_user_logged_in()?get_userdata(get_current_user_id())->display_name:'حساب کاربری' ?></span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                      class="lucide lucide-user-round preview-icon">
