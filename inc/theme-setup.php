@@ -80,3 +80,10 @@ function dgb_register_elementor_locations($elementor_theme_manager): void
 }
 
 add_action('elementor/theme/register_locations', 'dgb_register_elementor_locations');
+
+// SVG support for media
+add_filter('upload_mimes', function ($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+
+    return $mimes;
+});
