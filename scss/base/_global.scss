@@ -3,6 +3,7 @@
 body {
   color: theme.$color-text;
   background-color: theme.$color-background;
+  overflow-x: hidden;
 }
 
 a {
@@ -13,4 +14,7 @@ a {
 ::selection {
   color: theme.$color-background;
   background-color: theme.$color-primary;
+}
+.container {
+  @include theme.container;
 }

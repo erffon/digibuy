@@ -1,16 +1,42 @@
 @use "../abstracts" as theme;
+@use "../base" as base;
 
-.site-header {
-  padding-block: 1rem;
-  border-block-end: 1px solid theme.$color-border;
-  background-color: theme.$color-background;
+.header {
+  background-color: theme.$color-box;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: solid 1px theme.$color-border;
+  border-radius: theme.$border-radius+8px;
+  margin: theme.rem(16) 0;
+}
+.header_search {
+  border: solid 1px theme.$color-border;
+  padding:8px;
+  overflow: hidden;
+  background-color: white;
+  border-radius:  theme.$border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+
+  &_input {
+    border-radius: theme.$border-radius;
+    outline: none;
+    border: none;
+    width: 100%;
+
+    &::placeholder {
+      font-size: 0.85rem;
+    }
+  }
+
+  &_icon {
+    width: theme.rem(24);
+    height: theme.rem(24);
+    stroke: #e0e0e0;
+  }
 }
 
-.site-branding {
-  min-width: 0;
-}
 
-.custom-logo-link {
-  display: inline-block;
-  max-width: 100%;
-}

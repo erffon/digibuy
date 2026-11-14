@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "sass --watch --style=expanded scss/entries:assets/dist",
-    "build": "sass --style=compressed --no-source-map scss/entries:assets/dist"
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "sass": "^1.108.2"
+    "sass": "^1.108.2",
+    "vite": "^8.3.8"
   }
 }

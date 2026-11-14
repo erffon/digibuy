@@ -3,16 +3,19 @@ $font-family-base: ("IranSansX", sans-serif) !default;
 $font-size-base: 1rem !default;
 $line-height-base: 1.5 !default;
 
-$color-primary: #2563eb !default;
-$color-text: #1f2937 !default;
-$color-muted: #6b7280 !default;
+$color-primary: #DD2428 !default;
+$color-text: #050101 !default;
+$color-muted: rgb(39,36,42,62) !default;
 $color-background: #fff !default;
-$color-border: #e5e7eb !default;
+$color-box: #F7F7F7 !default;
+$color-border: #EEEEEE !default;
 
-$container-width: 80rem !default;
+$color-text-secondary:#5D5555 !default;
+
+$container-width: 100rem !default;
 $container-gutter: 1rem !default;
-$border-radius: 0.5rem !default;
-$transition-duration: 200ms !default;
+$border-radius: 12px !default;
+$transition-duration: 300ms !default;
 
 // Responsive breakpoints, following Tailwind CSS's default screen widths.
 // These are mobile-first min-width thresholds and can be overridden by
