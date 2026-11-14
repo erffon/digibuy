@@ -2,41 +2,101 @@
 @use "../base" as base;
 
 .header {
-  background-color: theme.$color-box;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem;
   border: solid 1px theme.$color-border;
   border-radius: theme.$border-radius+8px;
   margin: theme.rem(16) 0;
-}
-.header_search {
-  border: solid 1px theme.$color-border;
-  padding:8px;
-  overflow: hidden;
-  background-color: white;
-  border-radius:  theme.$border-radius;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 500px;
 
-  &_input {
+  &_search {
+    border: solid 1px theme.$color-border;
+    padding: 0.6rem 1.5rem;
+    overflow: hidden;
+    background-color: white;
     border-radius: theme.$border-radius;
-    outline: none;
-    border: none;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
 
-    &::placeholder {
-      font-size: 0.85rem;
+    &_input {
+      border-radius: theme.$border-radius;
+      outline: none;
+      border: none;
+      width: 100%;
+
+      &::placeholder {
+        font-size: 0.85rem;
+      }
+    }
+
+    &_icon {
+      width: theme.rem(24);
+      height: theme.rem(24);
+      stroke: #e0e0e0;
     }
   }
 
-  &_icon {
-    width: theme.rem(24);
-    height: theme.rem(24);
-    stroke: #e0e0e0;
+  &_buttons {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+
+    &_cart {
+      @include theme.dgb-border;
+      padding: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      background-color: white;
+
+      &:hover {
+        background-color: theme.$color-box;
+      }
+
+      svg {
+        stroke: theme.$color-text-secondary;
+      }
+
+      span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.35rem;
+        background-color: theme.$color-primary;
+        border-radius: 8px;
+        line-height: 100%;
+        color: white;
+        font-size: 0.8rem;
+        min-width: theme.rem(24);
+        min-height: theme.rem(24);
+      }
+    }
+
+    &_profile {
+      @include theme.dgb-border;
+      padding: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      background-color: white;
+
+      &:hover {
+        background-color: theme.$color-box;
+      }
+
+      svg {
+        stroke: theme.$color-text-secondary;
+      }
+
+      span {
+        color: theme.$color-text-secondary;
+      }
+    }
   }
 }
+
 
 

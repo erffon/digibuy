@@ -64,3 +64,7 @@
 @mixin focus-ring {
   &:focus-visible { outline: 2px solid variables.$color-primary; outline-offset: 3px; }
 }
+@mixin dgb-border {
+  border: solid 1px variables.$color-border;
+  border-radius: variables.$border-radius;
+}
