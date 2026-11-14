@@ -1,6 +1,27 @@
 @use "../abstracts" as theme;
 @use "../base" as base;
 
+.top-bar {
+  background-color: theme.$color-primary;
+  padding:1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0 0 16px 16px;
+
+  p{
+    color:white;
+    font-weight: bolder;
+  }
+  &_icon {
+    fill: #ffffff40;
+    stroke:white;
+    width: theme.rem(24);
+    height: theme.rem(24)
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -9,6 +30,12 @@
   border: solid 1px theme.$color-border;
   border-radius: theme.$border-radius+8px;
   margin: theme.rem(16) 0;
+
+
+  &_default-logo, .custom-logo {
+    width: auto;
+    height: 3.25rem;
+  }
 
   &_search {
     border: solid 1px theme.$color-border;
@@ -28,14 +55,15 @@
       width: 100%;
 
       &::placeholder {
-        font-size: 0.85rem;
+        font-size: 1rem;
+        color: theme.$color-text-secondary;
       }
     }
 
     &_icon {
       width: theme.rem(24);
       height: theme.rem(24);
-      stroke: #e0e0e0;
+      stroke: theme.$color-text-secondary;
     }
   }
 
