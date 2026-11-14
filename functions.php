@@ -1,5 +1,5 @@
 <?php
-!defined('ABSPATH') and exit;
+defined('ABSPATH') and exit;
 
 
 require_once get_template_directory() .
@@ -82,3 +82,4 @@ function dgb_register_plugins(): void
 define('THEME_PATH', get_template_directory());
 define('THEME_URI', get_template_directory_uri());
 
+require_once THEME_PATH . '/inc/theme-setup.php';
