@@ -1,5 +1,5 @@
 <?php
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 function dgb_theme_setup():void {
 
     add_theme_support('custom-logo');
@@ -17,6 +17,7 @@ function dgb_theme_setup():void {
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
     add_theme_support('widgets');
+//    add_theme_support('admin-bar');
 
     if(class_exists('WooCommerce')) {
         add_theme_support('woocommerce');
