@@ -55,10 +55,12 @@ function dgb_print_vite_assets(): void
 
 function dgb_enqueue_assets(): void
 {
+    $theme_version = wp_get_theme()->get( 'Version');
+
     $global_css_path = THEME_PATH . '/assets/dist/global.css';
     $global_css_version = file_exists($global_css_path)
         ? (string)filemtime($global_css_path)
-        : wp_get_theme()->get('Version');
+        : $theme_version;
 
     if (dgb_vite_running()) {
         add_action('wp_head', 'dgb_print_vite_assets', 5);
@@ -69,6 +71,12 @@ function dgb_enqueue_assets(): void
             [],
             $global_css_version
         );
+    }
+
+    if (!is_admin()) {
+        wp_enqueue_script('dgb-embla-js', THEME_URI . '/assets/js/embla.js', ['jquery'], '8.6.0', true);
+
+        wp_enqueue_script('dgb-carousel-js', THEME_URI . '/assets/js/carousel.js', ['jquery','dgb-embla-js'], $theme_version, true);
     }
 }
 

@@ -1,0 +1,59 @@
+.dgb-carousel {
+
+  .embla__viewport {
+    overflow: hidden;
+  }
+
+  .embla__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    margin-inline-start: -16px;
+  }
+
+  .embla__slide {
+    flex: 0 0 25%;
+    min-width: 0;
+    padding-inline-start: 16px;
+  }
+
+  .embla__controls {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    .embla__slide {
+      flex-basis: 33.333%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .embla__slide {
+      flex-basis: 50%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .embla__slide {
+      flex-basis: 100%;
+    }
+  }
+}
+.dgb-carousel {
+  direction: rtl;
+
+  .embla__viewport {
+    overflow: hidden;
+  }
+
+  .embla__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+  }
+
+  .embla__slide {
+    flex: 0 0 25%;
+    min-width: 0;
+  }
+}
