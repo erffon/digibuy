@@ -88,3 +88,4 @@ define('THEME_URI', get_template_directory_uri());
 
 require_once THEME_PATH . '/inc/theme-setup.php';
 require_once THEME_PATH . '/inc/helpers.php';
+require_once THEME_PATH . '/inc/theme-options.php';
