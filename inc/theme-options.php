@@ -93,13 +93,13 @@ $args = array(
     'page_title' => esc_html__('تنظیمات قالب دیجی بای', 'digibuy'),
 
     // Disable to create your own Google fonts loader.
-    'disable_google_fonts_link' => false,
+    'disable_google_fonts_link' => true,
 
     // Show the panel pages on the admin bar.
     'admin_bar' => true,
 
     // Icon for the admin bar menu.
-    'admin_bar_icon' => 'dashicons-portfolio',
+    'admin_bar_icon' => 'dashicons-admin-plugins',
 
     // Priority for the admin bar menu.
     'admin_bar_priority' => 50,
@@ -108,7 +108,7 @@ $args = array(
     'global_variable' => $opt_name,
 
     // Show the time the page took to load, etc. (forced on while on localhost or when WP_DEBUG is enabled).
-    'dev_mode' => false,
+    'dev_mode' => true,
 
     // Enable basic customizer support.
     'customizer' => true,
@@ -292,11 +292,11 @@ Redux::set_help_sidebar($opt_name, $content);
 Redux::set_section(
     $opt_name,
     array(
-        'title' => esc_html__('Basic Fields', 'your-textdomain-here'),
+        'title' => esc_html__('تنظیمات پایه', 'digibuy'),
         'id' => 'basic',
-        'desc' => esc_html__('These are really basic fields!', 'your-textdomain-here'),
+        'desc' => esc_html__('قالب دیجی بای را از این بخش راه اندازی کنید', 'digibuy'),
         'customizer_width' => '400px',
-        'icon' => 'el el-home',
+        'icon' => 'el el-shopping-cart-sign',
     )
 );
 
@@ -490,6 +490,7 @@ if (!function_exists('change_arguments')) {
     function change_arguments(array $args): array
     {
         $args['dev_mode'] = true;
+        $args['admin_bar_icon']=['dashicons-admin-plugins'];
 
         return $args;
     }
