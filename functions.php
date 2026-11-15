@@ -24,6 +24,11 @@ function dgb_register_plugins(): void
             'slug' => 'persian-woocommerce',
             'required' => true,
         ],
+        [
+            'name'=>'ریداکس',
+            'slug'=>'redux-framework',
+            'required' => true,
+        ]
     ];
 
 
