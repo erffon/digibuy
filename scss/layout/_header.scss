@@ -19,7 +19,11 @@
     fill: #ffffff40;
     stroke: white;
     width: theme.rem(24);
-    height: theme.rem(24)
+    height: theme.rem(24);
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -80,6 +84,7 @@
       align-items: center;
       gap: 0.2rem;
       background-color: white;
+      overflow: hidden;
 
       &:hover {
         background-color: theme.$color-box;
@@ -101,6 +106,7 @@
         font-size: 0.8rem;
         min-width: theme.rem(24);
         min-height: theme.rem(24);
+        box-shadow:  2px 5px 10px 1px rgba(221, 36, 40, 0.2);
       }
     }
 

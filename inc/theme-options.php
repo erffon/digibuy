@@ -12,6 +12,7 @@ defined('ABSPATH') || exit;
 if (!class_exists('Redux')) {
     return;
 }
+$theme_textdomain = wp_get_theme()->get( 'TextDomain' );
 
 // This is your option name where all the Redux data is stored.
 $opt_name = 'digibuy_opt';  // YOU MUST CHANGE THIS.  DO NOT USE 'redux_demo' IN YOUR PROJECT!!!
@@ -87,10 +88,10 @@ $args = array(
     'allow_sub_menu' => true,
 
     // The text to appear in the admin menu.
-    'menu_title' => esc_html__('دیجی بای', 'digibuy'),
+    'menu_title' => esc_html__('دیجی بای', $theme_textdomain),
 
     // The text to appear on the page title.
-    'page_title' => esc_html__('تنظیمات قالب دیجی بای', 'digibuy'),
+    'page_title' => esc_html__('تنظیمات قالب دیجی بای', $theme_textdomain),
 
     // Disable to create your own Google fonts loader.
     'disable_google_fonts_link' => true,
@@ -229,42 +230,38 @@ $args = array(
 $args['admin_bar_links'][] = array(
     'id' => 'redux-docs',
     'href' => '//devs.redux.io/',
-    'title' => __('Documentation', 'your-textdomain-here'),
+    'title' => __('Documentation', $theme_textdomain),
 );
 
 $args['admin_bar_links'][] = array(
     'id' => 'redux-support',
     'href' => '//github.com/ReduxFramework/redux-framework/issues',
-    'title' => __('Support', 'your-textdomain-here'),
+    'title' => __('Support', $theme_textdomain),
 );
 
 // SOCIAL ICONS → Set up custom links in the footer for quick links in your panel footer icons.
 // PLEASE CHANGE THESE SETTINGS IN YOUR THEME BEFORE RELEASING YOUR PRODUCT!!
 // If these are left unchanged, they will not display in your panel!
 $args['share_icons'][] = array(
-    'url' => '//github.com/ReduxFramework/ReduxFramework',
-    'title' => __('Visit us on GitHub', 'your-textdomain-here'),
+    'url' => '//github.com/erffon',
+    'title' => __('حساب گیتهاب ما', $theme_textdomain),
     'icon' => 'el el-github',
 );
+
 $args['share_icons'][] = array(
-    'url' => '//www.facebook.com/pages/Redux-Framework/243141545850368',
-    'title' => __('Like us on Facebook', 'your-textdomain-here'),
-    'icon' => 'el el-facebook',
-);
-$args['share_icons'][] = array(
-    'url' => '//twitter.com/reduxframework',
-    'title' => __('Follow us on Twitter', 'your-textdomain-here'),
+    'url' => '//x.com/erff_on',
+    'title' => __('حساب ایکس ما', $theme_textdomain),
     'icon' => 'el el-twitter',
 );
 $args['share_icons'][] = array(
-    'url' => '//www.linkedin.com/company/redux-framework',
-    'title' => __('Find us on LinkedIn', 'your-textdomain-here'),
+    'url' => '//www.linkedin.com/in/erfan-ranjbaran',
+    'title' => __('حساب لینکدین ما', $theme_textdomain),
     'icon' => 'el el-linkedin',
 );
 
 
 // Add content after the form.
-$args['footer_text'] = "<p>طراحی و توسعه قالب <strong>دیجی بای | عرفان رنجبران</strong></p>";
+$args['footer_text'] = "<p>طراحی و توسعه قالب دیجی بای | <a href='https://t.me/erfan_ranjbaran'> عرفان رنجبران</a></p>";
 
 Redux::set_args($opt_name, $args);
 
@@ -276,7 +273,7 @@ Redux::set_args($opt_name, $args);
 
 
 // Set the help sidebar.
-$content = '<p>' . esc_html__('This is the sidebar content, HTML is allowed.', 'your-textdomain-here') . '</p>';
+$content = '<p>' . esc_html__('This is the sidebar content, HTML is allowed.', $theme_textdomain) . '</p>';
 
 Redux::set_help_sidebar($opt_name, $content);
 
@@ -292,9 +289,9 @@ Redux::set_help_sidebar($opt_name, $content);
 Redux::set_section(
     $opt_name,
     array(
-        'title' => esc_html__('تنظیمات پایه', 'digibuy'),
+        'title' => esc_html__('تنظیمات پایه', $theme_textdomain),
         'id' => 'basic',
-        'desc' => esc_html__('قالب دیجی بای را از این بخش راه اندازی کنید', 'digibuy'),
+        'desc' => esc_html__('قالب دیجی بای را از این بخش راه اندازی کنید', $theme_textdomain),
         'customizer_width' => '400px',
         'icon' => 'el el-shopping-cart-sign',
     )
@@ -320,7 +317,7 @@ require_once Redux_Core::$dir . '../sample/metaboxes.php';
 if (file_exists($dir . '/../README.md')) {
     $section = array(
         'icon' => 'el el-list-alt',
-        'title' => esc_html__('توضیحات قالب', 'your-textdomain-here'),
+        'title' => esc_html__('توضیحات قالب', $theme_textdomain),
         'fields' => array(
             array(
                 'id' => 'opt-raw-documentation',
@@ -338,21 +335,21 @@ Redux::set_section(
     $opt_name,
     array(
         'icon' => 'el el-list-alt',
-        'title' => esc_html__('Customizer Only', 'your-textdomain-here'),
-        'desc' => '<p class="description">' . esc_html__('This Section should be visible only in Customizer', 'your-textdomain-here') . '</p>',
+        'title' => esc_html__('Customizer Only', $theme_textdomain),
+        'desc' => '<p class="description">' . esc_html__('This Section should be visible only in Customizer', $theme_textdomain) . '</p>',
         'customizer_only' => true,
         'fields' => array(
             array(
                 'id' => 'opt-customizer-only',
                 'type' => 'select',
-                'title' => esc_html__('Customizer Only Option', 'your-textdomain-here'),
-                'subtitle' => esc_html__('The subtitle is NOT visible in customizer', 'your-textdomain-here'),
-                'desc' => esc_html__('The field desc is NOT visible in customizer.', 'your-textdomain-here'),
+                'title' => esc_html__('Customizer Only Option', $theme_textdomain),
+                'subtitle' => esc_html__('The subtitle is NOT visible in customizer', $theme_textdomain),
+                'desc' => esc_html__('The field desc is NOT visible in customizer.', $theme_textdomain),
                 'customizer_only' => true,
                 'options' => array(
-                    '1' => esc_html__('Opt 1', 'your-textdomain-here'),
-                    '2' => esc_html__('Opt 2', 'your-textdomain-here'),
-                    '3' => esc_html__('Opt 3', 'your-textdomain-here'),
+                    '1' => esc_html__('Opt 1', $theme_textdomain),
+                    '2' => esc_html__('Opt 2', $theme_textdomain),
+                    '3' => esc_html__('Opt 3', $theme_textdomain),
                 ),
                 'default' => '2',
             ),
@@ -464,9 +461,10 @@ if (!function_exists('dynamic_section')) {
      */
     function dynamic_section(array $sections): array
     {
+
         $sections[] = array(
-            'title' => esc_html__('Section via hook', 'your-textdomain-here'),
-            'desc' => '<p class="description">' . esc_html__('This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.', 'your-textdomain-here') . '</p>',
+            'title' => esc_html__('Section via hook', $theme_textdomain),
+            'desc' => '<p class="description">' . esc_html__('This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.', $theme_textdomain) . '</p>',
             'icon' => 'el el-paper-clip',
 
             // Leave this as a blank section, no options just some intro text set above.
@@ -506,7 +504,7 @@ if (!function_exists('change_defaults')) {
      */
     function change_defaults(array $defaults): array
     {
-        $defaults['str_replace'] = esc_html__('Testing filter hook!', 'your-textdomain-here');
+        $defaults['str_replace'] = esc_html__('Testing filter hook!', $theme_textdomain);
 
         return $defaults;
     }
