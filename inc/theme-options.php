@@ -297,6 +297,7 @@ Redux::set_section(
     )
 );
 
+require_once THEME_PATH.'/inc/redux/basic-opt.php';
 require_once Redux_Core::$dir . '../sample/sections/basic-fields/checkbox.php';
 require_once Redux_Core::$dir . '../sample/sections/basic-fields/radio.php';
 require_once Redux_Core::$dir . '../sample/sections/basic-fields/sortable.php';
