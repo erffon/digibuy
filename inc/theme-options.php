@@ -461,6 +461,7 @@ if (!function_exists('dynamic_section')) {
      */
     function dynamic_section(array $sections): array
     {
+        global $theme_textdomain;
 
         $sections[] = array(
             'title' => esc_html__('Section via hook', $theme_textdomain),
@@ -504,6 +505,7 @@ if (!function_exists('change_defaults')) {
      */
     function change_defaults(array $defaults): array
     {
+        global $theme_textdomain;
         $defaults['str_replace'] = esc_html__('Testing filter hook!', $theme_textdomain);
 
         return $defaults;
