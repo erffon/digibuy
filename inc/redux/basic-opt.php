@@ -13,7 +13,7 @@ Redux::set_section(
 	$opt_name,
 	array(
 		'title'      => esc_html__( 'بنرهای تبلیغاتی', $theme_textdomain ),
-		'id'         => 'header-top-banner',
+		'id'         => 'commercial-banners',
 		'desc'       => '',
 		'subsection' => true,
 		'fields'     => array(
@@ -52,8 +52,15 @@ Redux::set_section(
 					'textarea_rows' => 5,
 				),
 			),
+            array(
+                'id'       => 'blog-archive-top-banner',
+                'type'     => 'gallery',
+                'title'=>esc_html__('گالری تبلیغاتی صفحه مقالات', $theme_textdomain),
+                'width'    => '1500',
+                'height'   => '369',
+                'url'      => true,
+            )
 
 		),
 	)
 );
-
