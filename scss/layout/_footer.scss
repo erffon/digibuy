@@ -1,6 +1,7 @@
 @use "../abstracts" as theme;
 
 .footer {
+  background-color: theme.$color-background;
 
   &_top-banner{}
 

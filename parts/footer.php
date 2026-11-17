@@ -32,9 +32,58 @@
         </div>
     </div>
 
-    <section class="footer_body"></section>
+    <section class="footer_body">
+        <div class="footer_body__menu-1">
+            <h3>دسترسی سریع</h3>
+            <ul>
+                <li>صفحه اصلی</li>
+                <li>بلاگ</li>
+                <li>سبد خرید</li>
+                <li>فروشگاه</li>
+            </ul>
+        </div>
+        <div class="footer_body__menu-2">
+            <h3>پیش از خرید</h3>
+            <ul>
+                <li>ارتباط با ما</li>
+                <li>درباره ما</li>
+                <li>سوالات متداول</li>
+                <li>حساب کاربری</li>
+            </ul>
+        </div>
+        <div class="footer_body__menu-3">
+            <h3>بعد از خرید</h3>
+            <ul>
+                <li>شیوه ارسال کالا</li>
+                <li>شرایط بازگشت کالا</li>
+                <li>پیگیری سفارشات</li>
+            </ul>
+        </div>
+        <div class="footer_body__licence">
+            <h3>نمادهای اعتماد</h3>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </section>
 
-    <section class="footer_bottom-banner"></section>
+    <section class="footer_bottom-banner">
+        <div class="right-side">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin preview-icon"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
 
-    <section class="footer_copyright"></section>
+            <p>آدرس : بازار آهن شاد آباد . پاساژ اواجنرال . ابتدای راسته حافظ پلاک ۳۶۲ پخش ابزار سهرابی</p>
+        </div>
+        <div class="left-side">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock-7 preview-icon"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l-2 4"/></svg>
+
+            <p>ساعات کاری : 9 صبح الی 10 شب - شماره تماس : 02165010690 </p>
+        </div>
+    </section>
+
+    <section class="footer_copyright">
+        <p>طراحی و توسعه توسط عرفان رنجبران</p>
+    </section>
 </footer>

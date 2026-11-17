@@ -157,7 +157,7 @@ summary {
 }
 body {
   color: #050101;
-  background-color: #fff;
+  background-color: #fff !important;
   overflow-x: hidden;
 }
 
@@ -177,6 +177,7 @@ a {
   margin-inline: auto;
   padding-inline: 1rem;
   box-sizing: border-box;
+  background-color: red;
 }
 
 @font-face {
