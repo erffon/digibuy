@@ -12,7 +12,7 @@ defined('ABSPATH') || exit;
 if (!class_exists('Redux')) {
     return;
 }
-$theme_textdomain = wp_get_theme()->get( 'TextDomain' );
+$theme_textdomain = wp_get_theme()->get('TextDomain');
 
 // This is your option name where all the Redux data is stored.
 $opt_name = 'digibuy_opt';  // YOU MUST CHANGE THIS.  DO NOT USE 'redux_demo' IN YOUR PROJECT!!!
@@ -75,6 +75,8 @@ $args = array(
     // This is where your data is stored in the database and also becomes your global variable name.
     'opt_name' => $opt_name,
 
+    'compiler' => false,
+    'async_typography' => false,
     // Name that appears at the top of your panel.
     'display_name' => $theme->get('Name'),
 
@@ -160,11 +162,11 @@ $args = array(
     'transient_time' => 60 * MINUTE_IN_SECONDS,
 
     // Global shut-off for dynamic CSS output by the framework. Will also disable google fonts output.
-    'output' => true,
+    'output' => false,
 
     // Allows dynamic CSS to be generated for customizer and google fonts,
     // but stops the dynamic CSS from going to the page head.
-    'output_tag' => true,
+    'output_tag' => false,
 
     // Disable the footer credit of Redux. Please leave if you can help it.
     'footer_credit' => '',
@@ -297,7 +299,7 @@ Redux::set_section(
     )
 );
 
-require_once THEME_PATH.'/inc/redux/basic-opt.php';
+require_once THEME_PATH . '/inc/redux/basic-opt.php';
 require_once Redux_Core::$dir . '../sample/sections/basic-fields/checkbox.php';
 require_once Redux_Core::$dir . '../sample/sections/basic-fields/radio.php';
 require_once Redux_Core::$dir . '../sample/sections/basic-fields/sortable.php';
@@ -490,7 +492,7 @@ if (!function_exists('change_arguments')) {
     function change_arguments(array $args): array
     {
         $args['dev_mode'] = true;
-        $args['admin_bar_icon']=['dashicons-admin-plugins'];
+        $args['admin_bar_icon'] = ['dashicons-admin-plugins'];
 
         return $args;
     }

@@ -36,7 +36,6 @@ Redux::set_section(
 				'height'       => '40',
 				'url'          => true,
 				'title'        => esc_html__( 'بنر بالای هدر', $theme_textdomain ),
-				'compiler'     => 'true',
 				'desc'         => esc_html__( 'ابعاد تصویر مورد نیاز: 1920 پیکسل (طول) و 40 پیکسل (عرض)', $theme_textdomain ),
 				'subtitle'     => esc_html__( 'مناسب اطلاعیه ها و جشنواره ها', $theme_textdomain ),
 				'preview_size' => 'full',
