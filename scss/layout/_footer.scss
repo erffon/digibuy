@@ -76,6 +76,25 @@
 
       &:last-child {
         flex: 2;
+
+
+        & > ul {
+          display: flex;
+          justify-content: start;
+          align-items: stretch;
+          gap: theme.rem(8);
+          flex-wrap: wrap;
+
+          & > li {
+            .footer-licence-img {
+              display: block;
+              height: theme.rem(84);
+              width: auto;
+              max-width: 100%;
+              object-fit: contain;
+            }
+          }
+        }
       }
 
       & > h3 {
@@ -87,7 +106,7 @@
           height: 3px;
           width: 15%;
           border-radius: 100px;
-          background: linear-gradient(90deg,white 0%, theme.$color-primary 100% );
+          background: linear-gradient(90deg, white 0%, theme.$color-primary 100%);
           display: block;
           transition: width 0.5s ease-out;
           margin-top: 4px;

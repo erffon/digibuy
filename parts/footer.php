@@ -62,10 +62,8 @@
         <div class="footer_body__item">
             <h3>نمادهای اعتماد</h3>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><a><img alt="نماد اعتماد" class="footer-licence-img" src="<?= THEME_URI.'/assets/img/global/enamad.png' ?>"/></a></li>
+                <li><a><img alt="نماد اعتماد" class="footer-licence-img" src="<?= THEME_URI.'/assets/img/global/samandehi.png' ?>"/></a></li>
             </ul>
         </div>
     </section>
