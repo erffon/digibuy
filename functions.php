@@ -1,8 +1,12 @@
 <?php
 defined('ABSPATH') || exit;
 
-require_once get_template_directory() .
-    '/inc/libs/class-tgm-plugin-activation.php';
+define('THEME_PATH', get_template_directory());
+define('THEME_URI', get_template_directory_uri());
+
+require_once THEME_PATH . '/inc/theme-setup.php';
+
+require_once THEME_PATH . '/inc/libs/class-tgm-plugin-activation.php';
 
 add_action('tgmpa_register', 'dgb_register_plugins');
 
@@ -24,11 +28,6 @@ function dgb_register_plugins(): void
             'slug' => 'persian-woocommerce',
             'required' => true,
         ],
-        [
-            'name'=>'ریداکس',
-            'slug'=>'redux-framework',
-            'required' => true,
-        ]
     ];
 
 
@@ -83,10 +82,5 @@ function dgb_register_plugins(): void
 
 }
 
-define('THEME_PATH', get_template_directory());
-define('THEME_URI', get_template_directory_uri());
 
-
-require_once THEME_PATH . '/inc/theme-setup.php';
 require_once THEME_PATH . '/inc/helpers.php';
-require_once THEME_PATH . '/inc/theme-options.php';

@@ -6,12 +6,12 @@
  * @package Redux Framework
  */
 
-// phpcs:disable
 defined('ABSPATH') || exit;
 
-if (!class_exists('Redux')) {
+if ( ! class_exists( 'Redux' ) ) {
     return;
 }
+
 $theme_textdomain = wp_get_theme()->get('TextDomain');
 
 // This is your option name where all the Redux data is stored.
@@ -300,13 +300,6 @@ Redux::set_section(
 );
 
 require_once THEME_PATH . '/inc/redux/basic-opt.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/checkbox.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/radio.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/sortable.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/text.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/multi-text.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/password.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/textarea.php';
 
 
 /**

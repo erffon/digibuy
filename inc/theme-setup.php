@@ -95,3 +95,28 @@ add_filter('upload_mimes', function ($mimes) {
 
     return $mimes;
 });
+
+/**
+ * Load embedded Redux Framework
+ * فقط اگر پلاگین Redux جداگانه نصب/فعال نبود، نسخه‌ی داخلی را لود کن
+ */
+if ( ! class_exists( 'Redux' ) ) {
+    $redux_path = THEME_PATH . '/inc/libs/redux-framework/redux-framework.php';
+
+    if ( file_exists( $redux_path ) ) {
+        require_once $redux_path;
+    }
+}
+
+// بعد از لود Redux، تنظیمات پنل را بارگذاری کن
+add_action( 'init', function () {
+    if ( class_exists( 'Redux' ) ) {
+        require_once THEME_PATH . '/inc/theme-options.php';
+    }
+}, 10 );
+
+add_filter( 'redux/my_theme_options/aURL_filter', function ( $url ) {
+    // اگر لازم شد مسیر را دستی اصلاح کنید
+    return THEME_PATH . '/inc/libs/redux-framework/redux-core/';
+} );
+//require_once THEME_PATH . '/inc/theme-options.php';
