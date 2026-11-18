@@ -518,6 +518,10 @@ h6 {
 }
 .footer_body__item:not(:last-child) {
   flex: 1;
+  border-left: dashed #EEEEEE 1px;
+}
+.footer_body__item:not(:first-child) {
+  padding-right: 1.5rem;
 }
 .footer_body__item:last-child {
   flex: 2;

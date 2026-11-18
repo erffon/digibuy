@@ -71,6 +71,10 @@
 
       &:not(:last-child) {
         flex: 1;
+        border-left: dashed theme.$color-border 1px;
+      }
+      &:not(:first-child){
+        padding-right: theme.rem(24);
       }
 
       &:last-child {
