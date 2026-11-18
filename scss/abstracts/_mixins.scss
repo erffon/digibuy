@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "variables";
+@use "sass:color";
 
 // Responsive helpers use the breakpoint names and values in _variables.scss.
 // Include content inside the mixin to emit styles within its media query.
@@ -64,6 +65,10 @@
 @mixin focus-ring {
   &:focus-visible { outline: 2px solid variables.$color-primary; outline-offset: 3px; }
 }
+@mixin dgb-soft-shadow($hex-color) {
+  box-shadow:  0 48px 100px 0 color.change($hex-color, $alpha: 0.15);
+}
+
 @mixin dgb-border {
   border: solid 1px variables.$color-border;
   border-radius: variables.$border-radius;

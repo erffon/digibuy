@@ -27,39 +27,39 @@
                 <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
             </svg>
 
-            <p class="contact-info_phone">021-65010690</p>
+            <a href="tel:02165010690" class="contact-info_phone">021-65010690</a>
             <p class="contact-info_description">همیشه آنلاین هستیم</p>
         </div>
     </div>
 
     <section class="footer_body">
-        <div class="footer_body__menu-1">
+        <div class="footer_body__item">
             <h3>دسترسی سریع</h3>
             <ul>
-                <li>صفحه اصلی</li>
-                <li>بلاگ</li>
-                <li>سبد خرید</li>
-                <li>فروشگاه</li>
+                <li><a href="#">صفحه اصلی</a></li>
+                <li><a href="#">بلاگ</a></li>
+                <li><a href="#">سبد خرید</a></li>
+                <li><a href="#">فروشگاه</a></li>
             </ul>
         </div>
-        <div class="footer_body__menu-2">
+        <div class="footer_body__item">
             <h3>پیش از خرید</h3>
             <ul>
-                <li>ارتباط با ما</li>
-                <li>درباره ما</li>
-                <li>سوالات متداول</li>
-                <li>حساب کاربری</li>
+                <li><a href="#">ارتباط با ما</a></li>
+                <li><a href="#">درباره ما</a></li>
+                <li><a href="#">سوالات متداول</a></li>
+                <li><a href="#">حساب کاربری</a></li>
             </ul>
         </div>
-        <div class="footer_body__menu-3">
+        <div class="footer_body__item">
             <h3>بعد از خرید</h3>
             <ul>
-                <li>شیوه ارسال کالا</li>
-                <li>شرایط بازگشت کالا</li>
-                <li>پیگیری سفارشات</li>
+                <li><a href="#">شیوه ارسال کالا</a></li>
+                <li><a href="#">شرایط بازگشت کالا</a></li>
+                <li><a href="#">پیگیری سفارشات</a></li>
             </ul>
         </div>
-        <div class="footer_body__licence">
+        <div class="footer_body__item">
             <h3>نمادهای اعتماد</h3>
             <ul>
                 <li></li>

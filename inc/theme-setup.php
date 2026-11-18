@@ -108,15 +108,10 @@ if ( ! class_exists( 'Redux' ) ) {
     }
 }
 
-// بعد از لود Redux، تنظیمات پنل را بارگذاری کن
-add_action( 'init', function () {
-    if ( class_exists( 'Redux' ) ) {
+add_action('init', function () {
+    if (class_exists('Redux')) {
         require_once THEME_PATH . '/inc/theme-options.php';
     }
-}, 10 );
+}, 10);
 
-add_filter( 'redux/my_theme_options/aURL_filter', function ( $url ) {
-    // اگر لازم شد مسیر را دستی اصلاح کنید
-    return THEME_PATH . '/inc/libs/redux-framework/redux-core/';
-} );
-//require_once THEME_PATH . '/inc/theme-options.php';
+require_once THEME_PATH . '/inc/theme-options.php';

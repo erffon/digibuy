@@ -1,13 +1,169 @@
 @use "../abstracts" as theme;
 
 .footer {
-  background-color: theme.$color-background;
+  margin: theme.rem(24) 0;
 
-  &_top-banner{}
+  &_top-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: theme.rem(24);
+    background-color: theme.$color-box;
+    border-radius: theme.$border-radius + 8px;
+    padding: theme.rem(24);
+    overflow: hidden;
+    margin: theme.rem(16) 0;
 
-  &_body{}
+    & > a {
+      flex-shrink: 0;
 
-  &_bottom-banner{}
+      & > img {
+        max-height: theme.rem(50);
+      }
+    }
 
-  &_copyright{}
+    & > p {
+      color: theme.$color-text-secondary;
+      font-size: theme.rem(14);
+    }
+
+    & > .contact-info {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: theme.rem(8);
+      background-color: theme.$color-background;
+      padding: theme.rem(24);
+      border-radius: theme.$border-radius+8px;
+      @include theme.dgb-soft-shadow(theme.$color-primary);
+
+
+      & > svg {
+        stroke: theme.$color-primary;
+        width: theme.rem(24);
+        height: auto;
+        margin-bottom: theme.rem(8);
+      }
+
+      & > a {
+        color: theme.$color-text-secondary;
+        font-weight: bolder;
+      }
+
+      & > p {
+        color: theme.$color-text-secondary;
+        font-size: theme.rem(14);
+      }
+    }
+  }
+
+  &_body {
+    @include theme.dgb-border;
+    border-radius: theme.$border-radius + 8px;
+    padding: theme.rem(24);
+    display: flex;
+    gap: theme.rem(16);
+    margin: theme.rem(16) 0;
+
+    &__item {
+
+
+      &:not(:last-child) {
+        flex: 1;
+      }
+
+      &:last-child {
+        flex: 2;
+      }
+
+      & > h3 {
+        font-size: theme.rem(20);
+        position: relative;
+
+        &::after {
+          content: "";
+          height: 3px;
+          width: 15%;
+          border-radius: 100px;
+          background: linear-gradient(90deg,white 0%, theme.$color-primary 100% );
+          display: block;
+          transition: width 0.5s ease-out;
+          margin-top: 4px;
+          opacity: 20%;
+
+        }
+
+        &:hover {
+          &::after {
+            width: 25%;
+            transition: width 0.5s ease-out;
+          }
+        }
+      }
+
+      & > ul {
+        font-size: theme.rem(16);
+        list-style: none;
+        margin-top: theme.rem(24);
+
+        & > li {
+
+          &:not(:last-child) {
+            margin-bottom: theme.rem(8);
+          }
+
+          & > a {
+            color: theme.$color-text-secondary;
+
+            &:hover {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  &_bottom-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: theme.rem(8);
+    background-color: theme.$color-box;
+    padding: theme.rem(24);
+    border-radius: theme.$border-radius + 8px;
+
+    & > .right-side, & > .left-side {
+      display: flex;
+      align-items: center;
+      gap: theme.rem(16);
+
+      & > svg {
+        padding: 3px;
+        stroke: white;
+        background-color: theme.$color-primary;
+        border-radius: 7px;
+      }
+
+      & > p {
+        font-size: theme.rem(14);
+        color: theme.$color-text
+      }
+    }
+  }
+
+  &_copyright {
+    width: 100%;
+
+    & > p {
+      color: theme.$color-text-secondary;
+      text-align: center;
+      font-size: theme.rem(14);
+      margin: theme.rem(16)
+    }
+  }
 }

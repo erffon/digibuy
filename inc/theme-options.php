@@ -229,17 +229,17 @@ $args = array(
 // ADMIN BAR LINKS → Set up custom links in the admin bar menu as external items.
 // PLEASE CHANGE THESE SETTINGS IN YOUR THEME BEFORE RELEASING YOUR PRODUCT!!
 // If these are left unchanged, they will not display in your panel!
-$args['admin_bar_links'][] = array(
-    'id' => 'redux-docs',
-    'href' => '//devs.redux.io/',
-    'title' => __('Documentation', $theme_textdomain),
-);
-
-$args['admin_bar_links'][] = array(
-    'id' => 'redux-support',
-    'href' => '//github.com/ReduxFramework/redux-framework/issues',
-    'title' => __('Support', $theme_textdomain),
-);
+//$args['admin_bar_links'][] = array(
+//    'id' => 'redux-docs',
+//    'href' => '//devs.redux.io/',
+//    'title' => __('Documentation', $theme_textdomain),
+//);
+//
+//$args['admin_bar_links'][] = array(
+//    'id' => 'redux-support',
+//    'href' => '//github.com/ReduxFramework/redux-framework/issues',
+//    'title' => __('Support', $theme_textdomain),
+//);
 
 // SOCIAL ICONS → Set up custom links in the footer for quick links in your panel footer icons.
 // PLEASE CHANGE THESE SETTINGS IN YOUR THEME BEFORE RELEASING YOUR PRODUCT!!

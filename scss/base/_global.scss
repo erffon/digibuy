@@ -9,6 +9,8 @@ body {
 a {
   color: theme.$color-primary;
   text-underline-offset: 0.15em;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 ::selection {
