@@ -1,8 +1,7 @@
 @use "../abstracts" as theme;
 
 .footer {
-  margin: theme.rem(24) 0;
-
+  margin-top: theme.rem(32);
   &_top-banner {
     display: flex;
     align-items: center;
