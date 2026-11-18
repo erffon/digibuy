@@ -1,0 +1,98 @@
+@use '../abstracts' as theme;
+
+
+.navbar {
+  background-color: white;
+  padding: theme.rem(16);
+  @include theme.dgb-border;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > .links {
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    gap: theme.rem(16);
+
+    & > .products-megamenu {
+      background-color: white;
+      @include theme.dgb-border;
+      padding: theme.rem(8) theme.rem(16);
+      color: theme.$color-text;
+
+      &:hover {
+        background-color: theme.$color-box;
+      }
+    }
+
+    & > ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      background-color: theme.$color-box;
+      border-radius: theme.$border-radius;
+      overflow: hidden;
+
+
+      & > li {
+        font-size: theme.rem(14);
+        padding: 0 theme.rem(24);
+        position: relative;
+
+
+        &:not(:last-child) {
+          border-left: dotted theme.$color-border 2px;
+        }
+
+        & > a {
+          color: theme.$color-text-secondary;
+
+          &:hover {
+            color: theme.$color-text;
+          }
+        }
+
+
+      }
+
+      & > .active {
+        & > a {
+          color: theme.$color-primary;
+          font-weight: 600;
+
+          &::before {
+            content:'';
+            width: 10px;
+            height: 12px;
+            border-radius: 100px 100px 0 0;
+            background-color: theme.$color-primary;
+            display: block;
+            position: absolute;
+            bottom: -16px;
+            right: 50%;
+            transform:translateX(50%);
+          }
+        }
+      }
+    }
+  }
+
+  & > .contact-info {
+    display: flex;
+    align-items: center;
+    gap: theme.rem(8);
+
+    & > svg {
+      stroke: theme.$color-primary;
+    }
+
+    & > p {
+      & > a {
+        color: theme.$color-text;
+        font-weight: 600;
+      }
+    }
+  }
+}
+

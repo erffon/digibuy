@@ -457,6 +457,82 @@ h6 {
   line-height: 100%;
 }
 
+.navbar {
+  background-color: white;
+  padding: 1rem;
+  border: solid 1px #EEEEEE;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar > .links {
+  display: flex;
+  align-items: stretch;
+  justify-content: start;
+  gap: 1rem;
+}
+.navbar > .links > .products-megamenu {
+  background-color: white;
+  border: solid 1px #EEEEEE;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  color: #050101;
+}
+.navbar > .links > .products-megamenu:hover {
+  background-color: #F7F7F7;
+}
+.navbar > .links > ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  background-color: #F7F7F7;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.navbar > .links > ul > li {
+  font-size: 0.875rem;
+  padding: 0 1.5rem;
+  position: relative;
+}
+.navbar > .links > ul > li:not(:last-child) {
+  border-left: dotted #EEEEEE 2px;
+}
+.navbar > .links > ul > li > a {
+  color: #5D5555;
+}
+.navbar > .links > ul > li > a:hover {
+  color: #050101;
+}
+.navbar > .links > ul > .active > a {
+  color: #DD2428;
+  font-weight: 600;
+}
+.navbar > .links > ul > .active > a::before {
+  content: "";
+  width: 10px;
+  height: 12px;
+  border-radius: 100px 100px 0 0;
+  background-color: #DD2428;
+  display: block;
+  position: absolute;
+  bottom: -16px;
+  right: 50%;
+  transform: translateX(50%);
+}
+.navbar > .contact-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.navbar > .contact-info > svg {
+  stroke: #DD2428;
+}
+.navbar > .contact-info > p > a {
+  color: #050101;
+  font-weight: 600;
+}
+
 .footer {
   margin-top: 2rem;
 }
