@@ -478,9 +478,23 @@ h6 {
   border-radius: 12px;
   padding: 0.5rem 1rem;
   color: #050101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.navbar > .links > .products-megamenu svg {
+  transform: rotate(0deg);
+  transform-origin: center center;
+  transition: transform 0.3s ease-out;
 }
 .navbar > .links > .products-megamenu:hover {
-  background-color: #F7F7F7;
+  border-color: #DD2428;
+}
+.navbar > .links > .products-megamenu:hover svg {
+  transform: rotate(180deg);
+  transform-origin: center center;
+  transition: transform 0.3s ease-out;
 }
 .navbar > .links > ul {
   display: flex;

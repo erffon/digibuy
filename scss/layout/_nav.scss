@@ -21,8 +21,24 @@
       padding: theme.rem(8) theme.rem(16);
       color: theme.$color-text;
 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: theme.rem(8);
+
+      svg {
+        transform: rotate(0deg);
+        transform-origin: center center;
+        transition: transform 0.3s ease-out;
+      }
+
       &:hover {
-        background-color: theme.$color-box;
+        border-color: theme.$color-primary;
+        svg {
+          transform: rotate(180deg);
+          transform-origin: center center;
+          transition: transform 0.3s ease-out;
+        }
       }
     }
 
