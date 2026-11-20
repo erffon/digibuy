@@ -1,38 +1,41 @@
-import { defineConfig } from 'vite';
-import { resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { defineConfig } from "vite";
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const themeRoot = fileURLToPath(new URL('.', import.meta.url));
+const themeRoot = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig({
-  base: './',
-  plugins: [{
-    name: 'reload-wordpress-templates',
-    configureServer(server) {
-      server.watcher.add(themeRoot);
-      server.watcher.on('change', (file) => {
-        if (file.endsWith('.php')) {
-          server.ws.send({ type: 'full-reload' });
-        }
-      });
+  base: "./",
+  plugins: [
+    {
+      name: "reload-wordpress-templates",
+      configureServer(server) {
+        server.watcher.add(themeRoot);
+        server.watcher.on("change", (file) => {
+          if (file.endsWith(".php")) {
+            server.ws.send({ type: "full-reload" });
+          }
+        });
+      },
     },
-  }],
+  ],
   server: {
-    host: '127.0.0.1',
-    origin: 'http://127.0.0.1:5173',
+    host: "127.0.0.1",
+    origin: "http://127.0.0.1:5173",
     port: 5173,
     strictPort: true,
     watch: { usePolling: true, interval: 300 },
   },
   build: {
-    outDir: 'assets/dist',
+    outDir: "assets/dist",
     emptyOutDir: false,
     rollupOptions: {
       input: {
-        global: resolve(themeRoot, 'scss/entries/global.scss'),
-        shop: resolve(themeRoot, 'scss/entries/shop.scss'),
+        global: resolve(themeRoot, "scss/entries/global.scss"),
+        shop: resolve(themeRoot, "scss/entries/shop.scss"),
+        blog: resolve(themeRoot, "scss/entries/blog.scss"),
       },
-      output: { assetFileNames: '[name][extname]' },
+      output: { assetFileNames: "[name][extname]" },
     },
   },
 });

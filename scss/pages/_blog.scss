@@ -1,0 +1,37 @@
+@use '../abstracts' as theme;
+
+.dgb-single-post {
+  margin: theme.rem(32) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: theme.rem(24);
+
+  .dgb-post{
+    flex: 3;
+
+    &__header {
+      margin-bottom: theme.rem(32);
+
+      &>.blog-cover{
+        border-radius: theme.$border-radius;
+        overflow: hidden;
+        height: theme.rem(500);
+        margin-bottom: theme.rem(24);
+
+        &>img {
+          width: 100%;
+          height:100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+    &__body{}
+  }
+  .dgb-single-sidebar{
+    flex: 1;
+    @include theme.dgb-border;
+    padding: theme.rem(16);
+  }
+}

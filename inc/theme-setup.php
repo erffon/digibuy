@@ -50,14 +50,16 @@ function dgb_print_vite_assets(): void
 {
     $vite_url = 'http://127.0.0.1:5173';
     wp_print_script_tag(['type' => 'module', 'src' => $vite_url . '/@vite/client']);
-    wp_print_script_tag(['type' => 'module', 'src' => $vite_url . '/scss/entries/global.scss']);
+    if (!is_single()) wp_print_script_tag(['type' => 'module', 'src' => $vite_url . '/scss/entries/global.scss']);
+    if (is_single()) wp_print_script_tag(['type' => 'module', 'src' => $vite_url . '/scss/entries/blog.scss']);
 }
 
 function dgb_enqueue_assets(): void
 {
-    $theme_version = wp_get_theme()->get( 'Version');
+    $theme_version = wp_get_theme()->get('Version');
 
     $global_css_path = THEME_PATH . '/assets/dist/global.css';
+
     $global_css_version = file_exists($global_css_path)
         ? (string)filemtime($global_css_path)
         : $theme_version;
@@ -71,12 +73,14 @@ function dgb_enqueue_assets(): void
             [],
             $global_css_version
         );
+        if (is_single()) wp_enqueue_style('dgb-blog-css', THEME_URI . '/assets/dist/blog.css', [], $global_css_version);
+
     }
 
     if (!is_admin()) {
         wp_enqueue_script('dgb-embla-js', THEME_URI . '/assets/js/embla.js', ['jquery'], '8.6.0', true);
 
-        wp_enqueue_script('dgb-carousel-js', THEME_URI . '/assets/js/carousel.js', ['jquery','dgb-embla-js'], $theme_version, true);
+        wp_enqueue_script('dgb-carousel-js', THEME_URI . '/assets/js/carousel.js', ['jquery', 'dgb-embla-js'], $theme_version, true);
     }
 }
 
@@ -100,10 +104,10 @@ add_filter('upload_mimes', function ($mimes) {
  * Load embedded Redux Framework
  * فقط اگر پلاگین Redux جداگانه نصب/فعال نبود، نسخه‌ی داخلی را لود کن
  */
-if ( ! class_exists( 'Redux' ) ) {
+if (!class_exists('Redux')) {
     $redux_path = THEME_PATH . '/inc/libs/redux-framework/redux-framework.php';
 
-    if ( file_exists( $redux_path ) ) {
+    if (file_exists($redux_path)) {
         require_once $redux_path;
     }
 }
