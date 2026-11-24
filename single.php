@@ -19,7 +19,7 @@
             </article>
             <!--    Single Post - Sidebar-->
             <aside class="dgb-single-sidebar">
-                hello
+                <?php get_template_part('parts/blog/single/sidebar-info'); ?>
             </aside>
         <?php endwhile; endif; ?>
     </div>

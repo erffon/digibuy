@@ -33,12 +33,67 @@
     }
 
     &__body {
+      color: theme.$color-text-secondary;
+      font-size: theme.rem(18);
+
+      & > p {
+        margin-bottom: theme.rem(16);
+      }
+
+      a {
+        font-weight: 600;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
     }
   }
 
   .dgb-single-sidebar {
     flex: 1;
+  }
+
+  .dgb-single-info {
     @include theme.dgb-border;
     padding: theme.rem(16);
+
+    .info-list {
+      list-style: none;
+      color: theme.$color-text-secondary;
+
+
+      &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:not(:last-child) {
+          padding-bottom: theme.rem(16);
+          border-bottom: 1px solid theme.$color-border;
+        }
+        &:not(:first-child){
+          padding-top: theme.rem(16);
+        }
+
+        h3 {
+          font-size: theme.rem(16);
+          font-weight: 500;
+          display: flex;
+          gap: theme.rem(8);
+          align-items: center;
+
+          &>svg{
+            stroke-width: 1.8;
+            width: theme.rem(20);
+          }
+
+        }
+
+        p {
+          font-weight: 300;
+        }
+      }
+    }
   }
 }
