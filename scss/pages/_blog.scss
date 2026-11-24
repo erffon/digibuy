@@ -72,7 +72,8 @@
           padding-bottom: theme.rem(16);
           border-bottom: 1px solid theme.$color-border;
         }
-        &:not(:first-child){
+
+        &:not(:first-child) {
           padding-top: theme.rem(16);
         }
 
@@ -83,7 +84,7 @@
           gap: theme.rem(8);
           align-items: center;
 
-          &>svg{
+          & > svg {
             stroke-width: 1.8;
             width: theme.rem(20);
           }
