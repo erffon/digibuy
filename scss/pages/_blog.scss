@@ -1,4 +1,5 @@
 @use '../abstracts' as theme;
+@use '../components/blog/single/sidebar-card';
 
 .dgb-single-post {
   margin: theme.rem(32) 0;
@@ -52,6 +53,9 @@
 
   .dgb-single-sidebar {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: theme.rem(16);
   }
 
   .dgb-single-info {
