@@ -101,12 +101,12 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.2;
+  line-height: 1.8;
   overflow-wrap: break-word;
 }
 
-h1 { font-size: clamp(2rem, 4vw, 3rem); }
-h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+h1 { font-size: clamp(2.25rem, calc(2.114rem + 0.682vw), 2.63rem); }
+h2 { font-size: clamp(2.00rem, calc(1.909rem + 0.455vw), 2.25rem); }
 h3 { font-size: 1.5rem; }
 h4 { font-size: 1.25rem; }
 h5 { font-size: 1.125rem; }
