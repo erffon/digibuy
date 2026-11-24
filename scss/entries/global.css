@@ -261,7 +261,7 @@ a {
 body {
   font-family: "IranSansX", sans-serif;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 h1,
@@ -270,16 +270,16 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.2;
+  line-height: 1.8;
   overflow-wrap: break-word;
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.25rem, 2.114rem + 0.682vw, 2.63rem);
 }
 
 h2 {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 1.909rem + 0.455vw, 2.25rem);
 }
 
 h3 {
