@@ -1,20 +1,32 @@
 @use '../../../abstracts' as theme;
 
 .sidebar-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: theme.rem(8);
 
   & > .thumb-wrapper {
-    border-radius: theme.$border-radius;
     position: relative;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1.68/1;
+    margin-bottom: theme.rem(8);
+    border-radius: theme.$border-radius;
+    overflow: hidden;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     &:after {
       width: 100%;
       height: 100%;
+      content:"";
       background: linear-gradient(
-                      to top,
-                      rgba(0, 0, 0, 0.9) 0%,
-                      rgba(0, 0, 0, 0.5) 45%,
-                      rgba(0, 0, 0, 0) 100%
+              to top,
+              rgba(0, 0, 0, 0.9) 0%,
+              rgba(0, 0, 0, 0.5) 45%,
+              rgba(0, 0, 0, 0) 100%
       );
     }
   }

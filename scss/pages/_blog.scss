@@ -9,7 +9,7 @@
   gap: theme.rem(42);
 
   .dgb-post {
-    flex: 3;
+    flex: 2.5;
 
     &__header {
       margin-bottom: theme.rem(32);
@@ -55,7 +55,18 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: theme.rem(16);
+    gap: theme.rem(24);
+
+    &__related-posts {
+
+      & > h2 {
+        border-bottom: 1px solid theme.$color-border;
+        padding-bottom: theme.rem(16);
+        margin-bottom: theme.rem(20);
+        font-size: theme.rem(16);
+        color: theme.$color-text-secondary
+      }
+    }
   }
 
   .dgb-single-info {
